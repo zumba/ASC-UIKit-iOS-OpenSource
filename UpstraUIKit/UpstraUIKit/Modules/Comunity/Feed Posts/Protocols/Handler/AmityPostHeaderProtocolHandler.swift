@@ -108,9 +108,6 @@ final class AmityPostHeaderProtocolHandler: AmityPostHeaderDelegate {
                 
             case .file, .image, .text, .video, .unknown:
                 contentView.configure(items: [editOption, deleteOption], selectedItem: nil)
-            case .liveStream:
-                // Currently we don't support edit live stream post.
-                contentView.configure(items: [deleteOption], selectedItem: nil)
             }
             viewController.present(bottomSheet, animated: false, completion: nil)
         } else {

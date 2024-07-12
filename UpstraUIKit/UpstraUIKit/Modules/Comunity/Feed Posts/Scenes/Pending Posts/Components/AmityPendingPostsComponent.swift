@@ -56,10 +56,6 @@ struct AmityPendingPostsComponent: AmityPostComposable {
                 let cell: AmityPostGalleryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
                 cell.display(post: post, indexPath: indexPath)
                 return cell
-            case .liveStream:
-                let cell: AmityPostLiveStreamTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                cell.display(post: post, indexPath: indexPath)
-                return cell
             case .file:
                 let cell: AmityPostFileTableViewCell = tableView.dequeueReusableCell(for: indexPath)
                 cell.display(post: post, indexPath: indexPath)

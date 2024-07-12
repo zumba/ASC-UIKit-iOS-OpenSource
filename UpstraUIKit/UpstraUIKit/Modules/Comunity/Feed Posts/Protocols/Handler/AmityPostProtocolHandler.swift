@@ -110,22 +110,6 @@ extension AmityPostProtocolHandler: AmityPostDelegate {
             tableView?.endUpdates()
         case .submit:
             delegate?.amityPostProtocolHandlerDidTapSubmit(cell)
-
-        case .tapLiveStream(let stream):
-            switch stream.status {
-            case .recorded:
-                AmityEventHandler.shared.openRecordedLiveStreamPlayer(
-                    from: viewController!,
-                    postId: post.postId,
-                    stream: stream
-                )
-            default:
-                AmityEventHandler.shared.openLiveStreamPlayer(
-                    from: viewController!,
-                    postId: post.postId,
-                    streamId: stream.streamId
-                )
-            }
         case .tapOnMentionWithUserId(let userId):
             AmityEventHandler.shared.userDidTap(from: viewController!, userId: userId)
         }

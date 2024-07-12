@@ -21,7 +21,6 @@ public protocol AmityPostDelegate: AnyObject {
 }
 
 public enum AmityPostAction {
-    case tapLiveStream(stream: AmityStream)
     case tapMedia(media: AmityMedia)
     case tapMediaInside(media: AmityMedia, photoViewer: AmityPhotoViewerController)
     case tapFile(file: AmityFile)

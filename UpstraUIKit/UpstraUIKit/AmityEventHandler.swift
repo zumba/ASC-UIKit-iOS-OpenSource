@@ -27,7 +27,6 @@ import AmitySDK
 public enum AmityPostContentType {
     case post
     case poll
-    case livestream
 }
 
 open class AmityEventHandler {
@@ -138,13 +137,7 @@ open class AmityEventHandler {
             completion(.poll)
         }
         
-        let livestreamPost = ImageItemOption(
-            title: "Livestream",
-            image: UIImage(named: "icon_create_livestream_post", in: AmityUIKitManager.bundle, compatibleWith: nil)) {
-                completion(.livestream)
-            }
-        
-        AmityBottomSheet.present(options: [livestreamPost, postOption, pollPostOption], from: source)
+        AmityBottomSheet.present(options: [postOption, pollPostOption], from: source)
     }
     
     /// Event for post creator
@@ -161,14 +154,6 @@ open class AmityEventHandler {
             viewController = AmityPostCreatorViewController.make(postTarget: postTarget)
         case .poll:
             viewController = AmityPollCreatorViewController.make(postTarget: postTarget)
-        case .livestream:
-            switch postTarget {
-            case .myFeed:
-                createLiveStreamPost(from: source, targetId: nil, targetType: .user, destinationToUnwindBackAfterFinish: source.presentingViewController ?? source)
-            case .community(object: let community):
-                createLiveStreamPost(from: source, targetId: community.communityId, targetType: .community, destinationToUnwindBackAfterFinish: source.presentingViewController ?? source)
-            }
-            return
         }
         
         if source.isModalPresentation {
@@ -181,22 +166,6 @@ open class AmityEventHandler {
         }
     }
     
-    /// This function will triggered when the user choose to "create live stream post".
-    ///
-    /// - Parameters:
-    ///   - source: The source view controller that trigger the event.
-    ///   - targetId: The target id to create live stream post.
-    ///   - targetType: The target type to create live stream post.
-    ///   - destinationToUnwindBackAfterFinish: The view controller to unwind back when live streaming has done. To maintain the proper AmityUIKit flow, please dismiss to this view controller after the action has ended.
-    open func createLiveStreamPost(
-        from source: AmityViewController,
-        targetId: String?,
-        targetType: AmityPostTargetType,
-        destinationToUnwindBackAfterFinish: UIViewController
-    ) {
-        print("To present live stream post creator, please override \(AmityEventHandler.self).\(#function), see https://docs.amity.co for more details.")
-    }
-    
     /// Event for post editor
     /// It will be triggered when edit post button is tapped
     ///
@@ -206,23 +175,5 @@ open class AmityEventHandler {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .overFullScreen
         source.present(navigationController, animated: true, completion: nil)
-    }
-    
-    /// This function will triggered when the user tap to watch live stream.
-    ///
-    /// - Parameters:
-    ///   - source: The source view controller that trigger the event.
-    ///   - postId: The post id to watch the live stream.
-    ///   - streamId: The stream id to watch.
-    open func openLiveStreamPlayer(from source: AmityViewController, postId: String, streamId: String) {
-        print("To present live stream, please override \(AmityEventHandler.self).\(#function), see https://docs.amity.co for more details.")
-    }
-    
-    open func openRecordedLiveStreamPlayer(
-        from source: AmityViewController,
-        postId: String,
-        stream: AmityStream
-    ) {
-        print("To watch recorded live stream videos, please override \(AmityEventHandler.self).\(#function), see https://docs.amity.co/amity-sdk/video/ios/view-play for more details.")
     }
 }

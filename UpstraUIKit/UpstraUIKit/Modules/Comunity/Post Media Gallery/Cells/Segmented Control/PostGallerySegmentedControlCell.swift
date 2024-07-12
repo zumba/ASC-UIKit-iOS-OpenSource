@@ -30,19 +30,15 @@ class PostGallerySegmentedControlCell: UICollectionViewCell, Nibbable {
     
     @IBOutlet private weak var photoButton: UIButton!
     @IBOutlet private weak var videoButton: UIButton!
-    @IBOutlet private weak var livestreamButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configureButton(photoButton, isHighlighted: false)
         configureButton(videoButton, isHighlighted: false)
-        configureButton(livestreamButton, isHighlighted: false)
-        // TODO: Uncomment this in the next release.
-        livestreamButton.isHidden = true
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        for button in [photoButton, videoButton, livestreamButton] {
+        for button in [photoButton, videoButton] {
             button!.layer.cornerRadius = button!.bounds.height * 0.5
             button!.clipsToBounds = true
         }

@@ -105,25 +105,6 @@ class PostGalleryItemCell: UICollectionViewCell, Nibbable {
             durationText = PostGalleryItemCell.getDurationFormatter(showHour: duration >= 3600).string(from: duration)
             mediaTitle = nil
             streamStatus = nil
-        case "liveStream":
-            let livestreamPlaceholder = UIImage(named: "default_livestream", in: AmityUIKitManager.bundle, compatibleWith: nil)
-            if let streamInfo = post.getLiveStreamInfo() {
-                // We treat deleted stream as .idle
-                if streamInfo.isDeleted {
-                    streamStatus = .idle
-                } else {
-                    streamStatus = streamInfo.status
-                }
-                mediaTitle = streamInfo.title
-                imageUrl = streamInfo.thumbnail?.fileURL
-                placeholder = livestreamPlaceholder
-            } else {
-                streamStatus = nil
-                mediaTitle = nil
-                imageUrl = nil
-                placeholder = livestreamPlaceholder
-            }
-            durationText = nil
         default:
             durationText = nil
             streamStatus = nil

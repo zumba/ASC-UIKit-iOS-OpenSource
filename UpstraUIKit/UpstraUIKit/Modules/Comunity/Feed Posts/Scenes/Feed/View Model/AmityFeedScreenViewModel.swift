@@ -77,8 +77,6 @@ extension AmityFeedScreenViewModel {
                 addComponent(component: AmityPostFileComponent(post: post))
             case .poll:
                 addComponent(component: AmityPostPollComponent(post: post))
-            case .liveStream:
-                addComponent(component: AmityPostLiveStreamComponent(post: post))
             case .unknown:
                 addComponent(component: AmityPostPlaceHolderComponent(post: post))
             }

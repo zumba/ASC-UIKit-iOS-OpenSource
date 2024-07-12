@@ -12,16 +12,6 @@ extension UIViewController {
     
     /// Call this function when the user press create post button.
     func presentCreatePostTypeSelectorDialogue() {
-        
-        let livestreamPost = ImageItemOption(
-            title: "Livestream",
-            image: UIImage(named: "icon_create_livestream_post", in: AmityUIKitManager.bundle, compatibleWith: nil),
-            completion: { [weak self] in
-                self?.dismiss(animated: true) {
-                    self?.presentCreatePostTargetSelector(type: .livestream)
-                }
-        })
-        
         let normalPost = ImageItemOption(
             title: "Post",
             image: UIImage(named: "icon_create_normal_post", in: AmityUIKitManager.bundle, compatibleWith: nil),
@@ -42,7 +32,7 @@ extension UIViewController {
         
         let bottomSheet = BottomSheetViewController()
         let contentView = ItemOptionView<ImageItemOption>()
-        contentView.configure(items: [livestreamPost, normalPost, pollPost], selectedItem: nil)
+        contentView.configure(items: [normalPost, pollPost], selectedItem: nil)
         
         bottomSheet.sheetContentView = contentView
         bottomSheet.isTitleHidden = true

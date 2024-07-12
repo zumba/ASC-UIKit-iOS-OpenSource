@@ -86,8 +86,6 @@ extension AmityPostDetailScreenViewModel {
             return AmityPostComponent(component: AmityPostMediaComponent(post: post))
         case .poll:
             return AmityPostComponent(component: AmityPostPollComponent(post: post))
-        case .liveStream:
-            return AmityPostComponent(component: AmityPostLiveStreamComponent(post: post))
         case .unknown:
             return AmityPostComponent(component: AmityPostPlaceHolderComponent(post: post))
         }

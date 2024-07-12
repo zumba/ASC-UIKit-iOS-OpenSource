@@ -476,9 +476,6 @@
 		A0A903B226BA749B002949B2 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A903B126BA749B002949B2 /* Protocol.swift */; };
 		A0A903F126BFC2D0002949B2 /* PostGalleryFakeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A903EF26BFC2D0002949B2 /* PostGalleryFakeItemCell.swift */; };
 		A0A903F226BFC2D0002949B2 /* PostGalleryFakeItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A903F026BFC2D0002949B2 /* PostGalleryFakeItemCell.xib */; };
-		A0B68B5C26E7187B007D7B5B /* AmityPostLiveStreamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68B5B26E7187B007D7B5B /* AmityPostLiveStreamComponent.swift */; };
-		A0B68B6026E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68B5E26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.swift */; };
-		A0B68B6126E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B68B5F26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.xib */; };
 		A0E2B23226B7B68200F1C4D5 /* AmityPostGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2B23026B7B68200F1C4D5 /* AmityPostGalleryViewController.swift */; };
 		A0E2B23326B7B68200F1C4D5 /* AmityPostGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E2B23126B7B68200F1C4D5 /* AmityPostGalleryViewController.xib */; };
 		A98B3BC12914BD7700C0A56D /* AmityCommentViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B3BC02914BD7700C0A56D /* AmityCommentViewLayout.swift */; };
@@ -1133,9 +1130,6 @@
 		A0A903B126BA749B002949B2 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		A0A903EF26BFC2D0002949B2 /* PostGalleryFakeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGalleryFakeItemCell.swift; sourceTree = "<group>"; };
 		A0A903F026BFC2D0002949B2 /* PostGalleryFakeItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostGalleryFakeItemCell.xib; sourceTree = "<group>"; };
-		A0B68B5B26E7187B007D7B5B /* AmityPostLiveStreamComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmityPostLiveStreamComponent.swift; sourceTree = "<group>"; };
-		A0B68B5E26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmityPostLiveStreamTableViewCell.swift; sourceTree = "<group>"; };
-		A0B68B5F26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmityPostLiveStreamTableViewCell.xib; sourceTree = "<group>"; };
 		A0E2B23026B7B68200F1C4D5 /* AmityPostGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmityPostGalleryViewController.swift; sourceTree = "<group>"; };
 		A0E2B23126B7B68200F1C4D5 /* AmityPostGalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmityPostGalleryViewController.xib; sourceTree = "<group>"; };
 		A98B3BC02914BD7700C0A56D /* AmityCommentViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmityCommentViewLayout.swift; sourceTree = "<group>"; };
@@ -1618,7 +1612,6 @@
 				0D44378B25CCFEB100C03616 /* Footer */,
 				0D41DA3F25D0EF800061A46D /* File */,
 				0D41DA2525D0C8D60061A46D /* Gallery */,
-				A0B68B5D26E72360007D7B5B /* Live Stream */,
 				0D41DA2125D0C8CD0061A46D /* Text */,
 				7858D3A226DAD81E00A0090E /* Poll */,
 				0D48DEA125D24C230090FE80 /* Preview Comment */,
@@ -1631,7 +1624,6 @@
 			isa = PBXGroup;
 			children = (
 				97D0EB4826A144DD00E9FE6A /* AmityPostMediaComponent.swift */,
-				A0B68B5B26E7187B007D7B5B /* AmityPostLiveStreamComponent.swift */,
 				0D95688725D58FD800DE98FD /* AmityPostTextComponent.swift */,
 				0D95689425D5908200DE98FD /* AmityPostFileComponent.swift */,
 				0D95689C25D59A2E00DE98FD /* AmityPostPlaceHolderComponent.swift */,
@@ -3701,15 +3693,6 @@
 			path = "Fake Item";
 			sourceTree = "<group>";
 		};
-		A0B68B5D26E72360007D7B5B /* Live Stream */ = {
-			isa = PBXGroup;
-			children = (
-				A0B68B5E26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.swift */,
-				A0B68B5F26E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.xib */,
-			);
-			path = "Live Stream";
-			sourceTree = "<group>";
-		};
 		A0E2B22F26B7B65600F1C4D5 /* Post Media Gallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -4581,7 +4564,6 @@
 				B77D391E24FB4AF2004907CF /* AmityMessageDateView.xib in Resources */,
 				72A974DE25E7595700706EB4 /* AmityPostViewAllCommentsTableViewCell.xib in Resources */,
 				B729BF6F2519163F00FC1A98 /* AmityMyCommunityTableViewCell.xib in Resources */,
-				A0B68B6126E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.xib in Resources */,
 				975F14DD2696C4A3009C94C7 /* AmityUserSettingsViewController.xib in Resources */,
 				A0A903AD26BA6E86002949B2 /* PostGallerySegmentedControlCell.xib in Resources */,
 				97D723DD2695B133000735F5 /* AmityUserFollowersViewController.xib in Resources */,
@@ -4759,7 +4741,6 @@
 				7236EB3D255922D60006F785 /* AmityUserFeedViewController.swift in Sources */,
 				B735CD6B254937C200A98B95 /* AmityKeyboardComposeBarViewController.swift in Sources */,
 				0DB11FDF25A7FB7D006A3C80 /* AmityCommunityJoinController.swift in Sources */,
-				A0B68B6026E7238E007D7B5B /* AmityPostLiveStreamTableViewCell.swift in Sources */,
 				72887A1C2537F7AB00188FAD /* AmityUserProfileEditorScreenViewModelType.swift in Sources */,
 				72A3517124EA820800DA9D46 /* AmityImagePickerImageView.swift in Sources */,
 				B7B31C61250F4ACF000AC6E4 /* PagerTabStripBehaviour.swift in Sources */,
@@ -4970,7 +4951,6 @@
 				78561A8225F9D86C00A1403E /* AmityPostReviewSettingsItem.swift in Sources */,
 				A0A903F126BFC2D0002949B2 /* PostGalleryFakeItemCell.swift in Sources */,
 				72A3518B24EA820800DA9D46 /* ZoomInteractionController.swift in Sources */,
-				A0B68B5C26E7187B007D7B5B /* AmityPostLiveStreamComponent.swift in Sources */,
 				97D0EBC326A14BB600E9FE6A /* UIPanGestureRecognizer+Extension.swift in Sources */,
 				7236EB4225593DDC0006F785 /* AmityPostCreatorViewController.swift in Sources */,
 				B711FF612563D54B00D12FC4 /* UploadImageMessageOperation.swift in Sources */,

@@ -237,32 +237,6 @@ extension AmityPostGalleryViewController: UICollectionViewDelegateFlowLayout {
                 } else {
                     print("unable to find image url for post: \(postObject.postId)")
                 }
-            case "liveStream":
-                guard let stream = postObject.getLiveStreamInfo() else {
-                    print("unable to find stream for post: \(postObject.postId)")
-                    return
-                }
-                guard !stream.isDeleted else {
-                    return
-                }
-                switch stream.status {
-                case .recorded:
-                    AmityEventHandler.shared.openRecordedLiveStreamPlayer(
-                        from: self,
-                        postId: postObject.postId,
-                        stream: stream
-                    )
-                case .live:
-                    AmityEventHandler.shared.openLiveStreamPlayer(
-                        from: self,
-                        postId: postObject.postId,
-                        streamId: stream.streamId
-                    )
-                case .ended, .idle:
-                    break
-                @unknown default:
-                    break
-                }
             default:
                 assertionFailure("Not implement")
                 break

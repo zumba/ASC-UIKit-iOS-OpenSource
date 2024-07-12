@@ -133,7 +133,6 @@ public class AmityPostModel {
         case file
         case video
         case poll
-        case liveStream
         case unknown
     }
     
@@ -276,7 +275,6 @@ public class AmityPostModel {
     private(set) var text: String = ""
     private(set) var medias: [AmityMedia] = []
     private(set) var files: [AmityFile] = []
-    private(set) var liveStream: AmityStream?
     private let post: AmityPost
     private let childrenPosts: [AmityPost]
     
@@ -392,11 +390,6 @@ public class AmityPostModel {
                 }
             case "poll":
                 dataTypeInternal = .poll
-            case "liveStream":
-                if let liveStreamData = aChild.getLiveStreamInfo() {
-                    liveStream = liveStreamData
-                    dataTypeInternal = .liveStream
-                }
             default:
                 dataTypeInternal = .unknown
             }
