@@ -37,16 +37,14 @@ xcodebuild clean archive \
     -workspace UpstraUIKit.xcworkspace \
     -scheme AmityUIKit \
     -configuration Release \
-    -arch arm64 \
-    -sdk "iphoneos" \
+    -destination "generic/platform=iOS" \
     -archivePath "${BUILD_FOLDER}/uikit/ios.xcarchive" \
     SKIP_INSTALL=NO
 xcodebuild clean archive \
     -workspace UpstraUIKit.xcworkspace \
     -scheme AmityUIKit \
     -configuration Release \
-    -arch x86_64 \
-    -sdk "iphonesimulator" \
+    -destination "generic/platform=iOS Simulator" \
     -archivePath "${BUILD_FOLDER}/uikit/ios_sim.xcarchive" \
     SKIP_INSTALL=NO
 cd ${ROOT_FOLDER}
