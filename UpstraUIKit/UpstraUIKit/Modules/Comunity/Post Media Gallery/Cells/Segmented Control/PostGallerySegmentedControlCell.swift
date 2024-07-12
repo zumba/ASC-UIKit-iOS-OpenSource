@@ -22,7 +22,6 @@ class PostGallerySegmentedControlCell: UICollectionViewCell, Nibbable {
     enum Section {
         case image
         case video
-        case livestream
     }
     
     weak var delegate: PostGallerySegmentedControlCellDelegate?
@@ -108,8 +107,6 @@ class PostGallerySegmentedControlCell: UICollectionViewCell, Nibbable {
             return photoButton
         case .video:
             return videoButton
-        case .livestream:
-            return livestreamButton
         }
     }
     
@@ -119,10 +116,6 @@ class PostGallerySegmentedControlCell: UICollectionViewCell, Nibbable {
     
     @IBAction private func videoDidTouch() {
         delegate?.postGallerySegmentedControlCell(self, didTouchSection: .video)
-    }
-    
-    @IBAction func livestreamDidTouch() {
-        delegate?.postGallerySegmentedControlCell(self, didTouchSection: .livestream)
     }
     
     static var height: CGFloat {

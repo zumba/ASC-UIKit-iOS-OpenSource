@@ -73,8 +73,6 @@ public class AmityPostGalleryViewController: AmityViewController {
             filterPostTypes = ["image"]
         case .video:
             filterPostTypes = ["video"]
-        case .livestream:
-            filterPostTypes = ["liveStream"]
         }
         
         let queryOptions = AmityPostQueryOptions(
@@ -165,8 +163,6 @@ extension AmityPostGalleryViewController: UICollectionViewDelegateFlowLayout {
                 emptyStateCell.configure(image: UIImage(named: "empty_post_gallery_image", in: AmityUIKitManager.bundle, compatibleWith: nil), text: "No photo yet")
             case .video:
                 emptyStateCell.configure(image: UIImage(named: "empty_post_gallery_video", in: AmityUIKitManager.bundle, compatibleWith: nil), text: "No video yet")
-            case .livestream:
-                emptyStateCell.configure(image: UIImage(named: "empty_post_gallery_video", in: AmityUIKitManager.bundle, compatibleWith: nil), text: "No livestream yet")
             case .none:
                 assertionFailure("currentSection must already have a value at this point.")
             }
