@@ -163,7 +163,7 @@
 "explore_title" = "Explore";
 
 // MARK: - Community home page
-"community_home_title" = "Community";
+"community_home_title" = "Groups";
 
 // MARK: - Community detail page
 "community_detail_join_button" = "Join";
