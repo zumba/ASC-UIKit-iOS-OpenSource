@@ -38,7 +38,7 @@ class PostGallerySegmentedControlCell: UICollectionViewCell, Nibbable {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        for button in [photoButton, videoButton] {
+        for button in [photoButton] {
             button!.layer.cornerRadius = button!.bounds.height * 0.5
             button!.clipsToBounds = true
         }

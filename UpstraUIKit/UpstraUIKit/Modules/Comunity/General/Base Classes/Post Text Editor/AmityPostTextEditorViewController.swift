@@ -841,9 +841,9 @@ extension AmityPostTextEditorViewController: AmityPostTextEditorMenuViewDelegate
         if settings.allowPostAttachments.contains(.file) {
             items.append(fileOption)
         }
-        if settings.allowPostAttachments.contains(.video) {
-            items.append(videoOption)
-        }
+//        if settings.allowPostAttachments.contains(.video) {
+//            items.append(videoOption)
+//        }
         
         // NOTE: Once the currentAttachmentState has changed from `none` to something else.
         // We still show the buttons, but we disable them based on the currentAttachmentState.

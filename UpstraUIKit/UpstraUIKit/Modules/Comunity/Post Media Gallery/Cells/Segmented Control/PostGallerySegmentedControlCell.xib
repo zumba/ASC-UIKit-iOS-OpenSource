@@ -25,7 +25,7 @@
                             <action selector="photoDidTouch" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ctp-ZP-ahm"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-dA-8rr">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-dA-8rr">
                         <rect key="frame" x="80" y="15" width="71" height="34"/>
                         <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
                         <state key="normal" title="Videos"/>

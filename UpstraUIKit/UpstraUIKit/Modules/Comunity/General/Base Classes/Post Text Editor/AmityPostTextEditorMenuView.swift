@@ -90,7 +90,7 @@ class AmityPostTextEditorMenuView: UIView {
         
         // Setup arrangedSubview in stackview
         
-        let buttonsToAdd = [cameraButton, albumButton, videoButton, fileButton, expandButton]
+        let buttonsToAdd = [cameraButton, albumButton, fileButton, expandButton]
         for button in buttonsToAdd {
             button.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -108,7 +108,7 @@ class AmityPostTextEditorMenuView: UIView {
         // Set buttons visibility based on allowPostAttachments.
         cameraButton.isHidden = allowPostAttachments.isDisjoint(with: [.image, .video])
         albumButton.isHidden = allowPostAttachments.isDisjoint(with: [.image])
-        videoButton.isHidden = allowPostAttachments.isDisjoint(with: [.video])
+        videoButton.isHidden = true //allowPostAttachments.isDisjoint(with: [.video])
         fileButton.isHidden = allowPostAttachments.isDisjoint(with: [.file])
         
         // At empty view, at beginning, and the end of the stackview.

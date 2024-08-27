@@ -109,7 +109,7 @@ class AmityUserProfileHeaderViewController: AmityViewController, AmityRefreshabl
         messageButton.layer.borderColor = AmityColorSet.secondary.blend(.shade3).cgColor
         messageButton.layer.borderWidth = 1
         messageButton.layer.cornerRadius = 6
-        messageButton.isHidden = settings.shouldChatButtonHide
+        messageButton.isHidden = true //settings.shouldChatButtonHide
     }
     
     private func setupViewModel() {
@@ -188,7 +188,7 @@ class AmityUserProfileHeaderViewController: AmityViewController, AmityRefreshabl
         displayNameLabel.text = user.displayName
         descriptionLabel.text = user.about
         editProfileButton.isHidden = !user.isCurrentUser
-        messageButton.isHidden = settings.shouldChatButtonHide || user.isCurrentUser
+        messageButton.isHidden = true
     }
     
     private func updateFollowInfo(with model: AmityFollowInfo) {
@@ -224,13 +224,13 @@ class AmityUserProfileHeaderViewController: AmityViewController, AmityRefreshabl
     private func updateFollowButton(with status: AmityFollowStatus) {
         
         // Hide message button
-        messageButton.isHidden = status == .blocked
+        messageButton.isHidden = true //status == .blocked
         
         switch status {
         case .accepted:
             followButton.isHidden = true
         case .pending:
-            followButton.isHidden = false
+            followButton.isHidden = true
             followButton.setTitle(AmityLocalizedStringSet.userDetailFollowButtonCancel.localizedString, for: .normal)
             followButton.setImage(AmityIconSet.Follow.iconFollowPendingRequest, position: .left)
             followButton.backgroundColor = .white
