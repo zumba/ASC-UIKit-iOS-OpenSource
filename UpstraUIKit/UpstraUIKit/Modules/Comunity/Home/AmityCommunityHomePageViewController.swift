@@ -51,10 +51,7 @@ public class AmityCommunityHomePageViewController: AmityPageViewController {
 private extension AmityCommunityHomePageViewController {
     @objc func searchTap() {
         let searchVC = AmitySearchViewController.make()
-        let nav = UINavigationController(rootViewController: searchVC)
-        nav.modalPresentationStyle = .fullScreen
-        nav.modalTransitionStyle = .crossDissolve
-        present(nav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
 }
 

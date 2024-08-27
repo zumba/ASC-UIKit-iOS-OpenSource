@@ -69,7 +69,7 @@ public class AmitySearchViewController: AmityPageViewController {
     
     // MARK: - Setup views
     private func setupNavigationBar() {
-        navigationBarType = .custom
+        navigationBarType = .push
     }
     
     private func setupSearchController() {
@@ -96,7 +96,7 @@ public class AmitySearchViewController: AmityPageViewController {
     
     @IBAction func cancelAction(_ sender: UIButton) {
         handelSearch(with: nil)
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
