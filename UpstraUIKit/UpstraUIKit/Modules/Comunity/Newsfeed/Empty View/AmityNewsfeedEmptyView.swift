@@ -48,6 +48,7 @@ final class AmityNewsfeedEmptyView: AmityView {
         exploreCommunityButton.contentEdgeInsets = .init(top: 0, left: 30, bottom: 0, right: 30)
         exploreCommunityButton.layer.cornerRadius = 4
         
+        createCommunityButton.isHidden = true
         createCommunityButton.setTitle(AmityLocalizedStringSet.emptyNewsfeedCreateButton.localizedString, for: .normal)
         createCommunityButton.setTitleFont(AmityFontSet.body)
         createCommunityButton.setTitleColor(AmityColorSet.primary, for: .normal)
