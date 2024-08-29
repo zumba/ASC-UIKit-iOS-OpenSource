@@ -121,6 +121,7 @@ class AmityPostDetailCompostView: UIView {
         // Reply view
         replyLabel.translatesAutoresizingMaskIntoConstraints = false
         replyLabel.textColor = AmityColorSet.base.blend(.shade1)
+        replyLabel.font = UIFont.systemFont(ofSize: 11)
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.setImage(AmityIconSet.iconClose, for: .normal)
         dismissButton.tintColor = AmityColorSet.base.blend(.shade2)
@@ -177,7 +178,7 @@ class AmityPostDetailCompostView: UIView {
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            replyContainerView.heightAnchor.constraint(equalToConstant: Constant.defaultTextViewHeight),
+            replyContainerView.heightAnchor.constraint(equalToConstant: 20.0),
             replyLabel.centerYAnchor.constraint(equalTo: replyContainerView.centerYAnchor),
             replyLabel.leadingAnchor.constraint(equalTo: replyContainerView.leadingAnchor, constant: 16.0),
             replyLabel.trailingAnchor.constraint(equalTo: dismissButton.leadingAnchor, constant: -8.0),
