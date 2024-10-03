@@ -41,11 +41,12 @@ public struct AmityMediaAttachmentComponent: AmityComponentView {
              
             let cameraButtonIcon = viewConfig.getConfig(elementId: .cameraButton, key: "image", of: String.self) ?? ""
             getItemView(image: AmityIcon.getImageResource(named: cameraButtonIcon), isHidden: false) {
-                if let currentType = currentType {
-                    showCamera.type = currentType == .image ? [UTType.image] : [UTType.movie]
-                } else {
-                    showCamera.type = [UTType.image, UTType.movie]
-                }
+//                if let currentType = currentType {
+//                    showCamera.type = currentType == .image ? [UTType.image] : [UTType.movie]
+//                } else {
+//                    showCamera.type = [UTType.image, UTType.movie]
+//                }
+                showCamera.type = [UTType.image]
                 
                 showCamera.source = .camera
                 showCamera.isShown.toggle()

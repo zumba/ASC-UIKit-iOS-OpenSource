@@ -15,7 +15,8 @@ struct ImageVideoPicker: UIViewControllerRepresentable {
     @ObservedObject var viewModel: ImageVideoPickerViewModel
     private let mediaType: [UTType]
     
-    init(viewModel: ImageVideoPickerViewModel, mediaType: [UTType] = [UTType.image, UTType.movie]) {
+//    init(viewModel: ImageVideoPickerViewModel, mediaType: [UTType] = [UTType.image, UTType.movie]) {
+    init(viewModel: ImageVideoPickerViewModel, mediaType: [UTType] = [UTType.image]) {
         self.viewModel = viewModel
         self.mediaType = mediaType
     }
@@ -62,12 +63,12 @@ struct ImageVideoPicker: UIViewControllerRepresentable {
                         parent.presentationMode.wrappedValue.dismiss()
                     }
                     
-                case UTType.movie.identifier:
-                    if let url = info[.mediaURL] as? URL {
-                        parent.viewModel.selectedMedia = UTType.movie.identifier
-                        parent.viewModel.selectedMediaURL = url
-                        parent.presentationMode.wrappedValue.dismiss()
-                    }
+//                case UTType.movie.identifier:
+//                    if let url = info[.mediaURL] as? URL {
+//                        parent.viewModel.selectedMedia = UTType.movie.identifier
+//                        parent.viewModel.selectedMediaURL = url
+//                        parent.presentationMode.wrappedValue.dismiss()
+//                    }
                 default:
                     break
                 }
