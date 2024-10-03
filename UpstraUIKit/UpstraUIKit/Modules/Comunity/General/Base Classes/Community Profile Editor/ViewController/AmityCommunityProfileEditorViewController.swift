@@ -338,6 +338,7 @@ private extension AmityCommunityProfileEditorViewController {
             #warning("Redundancy: camera picker should be replaced with a singleton class")
             let cameraPicker = UIImagePickerController()
             cameraPicker.sourceType = .camera
+            cameraPicker.cameraCaptureMode = .photo
             cameraPicker.mediaTypes = ["public.image"]
             cameraPicker.delegate = self
             self?.displayCamera(cameraPicker: cameraPicker)
