@@ -113,6 +113,7 @@ class AmityGroupChatEditViewController: AmityViewController {
         cameraOption.completion = { [weak self] in
             let cameraPicker = UIImagePickerController()
             cameraPicker.sourceType = .camera
+            cameraPicker.mediaTypes = ["public.image"]
             cameraPicker.delegate = self
             self?.displayCamera(cameraPicker: cameraPicker)
         }
