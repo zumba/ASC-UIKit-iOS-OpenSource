@@ -13,7 +13,7 @@ enum PostMenuType: String, CaseIterable, Identifiable {
     }
     
     case post = "Post"
-    case story = "Story"
+//    case story = "Story"
 //    case poll = "Poll"
 //    case liveStream = "Livestream"
 }
@@ -72,13 +72,13 @@ public struct AmityCreatePostMenuComponent: AmityComponentView {
                         .onTapGesture {
                             goToPostCreation()
                         }
-                case .story:
-                    let createStoryButton = viewConfig.getConfig(elementId: .createStoryButton, key: "image", of: String.self) ?? ""
-                    let createStoryTitle = viewConfig.getConfig(elementId: .createStoryButton, key: "text", of: String.self) ?? ""
-                    getItemView(image: AmityIcon.getImageResource(named: createStoryButton), title: createStoryTitle)
-                        .onTapGesture {
-                            goToStoryCreation()
-                        }
+//                case .story:
+//                    let createStoryButton = viewConfig.getConfig(elementId: .createStoryButton, key: "image", of: String.self) ?? ""
+//                    let createStoryTitle = viewConfig.getConfig(elementId: .createStoryButton, key: "text", of: String.self) ?? ""
+//                    getItemView(image: AmityIcon.getImageResource(named: createStoryButton), title: createStoryTitle)
+//                        .onTapGesture {
+//                            goToStoryCreation()
+//                        }
 //                case .poll:
 //                    let icon = AmityIcon.createPollMenuIcon
 //                    getItemView(image: icon.getImageResource(), title: type.rawValue)
