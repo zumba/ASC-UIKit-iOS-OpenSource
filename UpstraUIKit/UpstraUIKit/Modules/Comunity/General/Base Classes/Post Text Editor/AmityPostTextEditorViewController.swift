@@ -552,8 +552,6 @@ public class AmityPostTextEditorViewController: AmityViewController {
         
         let cameraPicker = UIImagePickerController()
         cameraPicker.sourceType = .camera
-        cameraPicker.cameraCaptureMode = .photo
-        cameraPicker.mediaTypes = ["public.image"]
         cameraPicker.delegate = self
         
         // We automatically choose media type based on last media pick.
@@ -565,10 +563,10 @@ public class AmityPostTextEditorViewController: AmityViewController {
             if settings.allowPostAttachments.contains(.image) {
                 mediaTypesWhenNothingSelected.append(kUTTypeImage as String)
             }
-            if settings.allowPostAttachments.contains(.video) {
-                mediaTypesWhenNothingSelected.append(kUTTypeMovie as String)
-            }
-            cameraPicker.mediaTypes = mediaTypesWhenNothingSelected
+//            if settings.allowPostAttachments.contains(.video) {
+//                mediaTypesWhenNothingSelected.append(kUTTypeMovie as String)
+//            }
+            cameraPicker.mediaTypes = [kUTTypeImage as String]
         case .image:
             // The user already select image, so we force the media type to allow only image.
             cameraPicker.mediaTypes = [kUTTypeImage as String]
