@@ -66,17 +66,17 @@ public struct AmityDetailedMediaAttachmentComponent: AmityComponentView {
             .isHidden(viewConfig.isHidden(elementId: .imageButton))
             .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.imageButton)
             
-            let videoButtonIcon = viewConfig.getConfig(elementId: .videoButton, key: "image", of: String.self) ?? ""
-            let videoButtonTitle = viewConfig.getConfig(elementId: .videoButton, key: "text", of: String.self) ?? ""
-            getItemView(image: AmityIcon.getImageResource(named: videoButtonIcon),
-                        title: videoButtonTitle,
-                        isHidden: viewModel.medias.first?.type ?? .video != .video) {
-                showMediaPicker.type = .videos
-                showMediaPicker.source = .photoLibrary
-                showMediaPicker.isShown.toggle()
-            }
-            .isHidden(viewConfig.isHidden(elementId: .videoButton))
-            .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.videoButton)
+//            let videoButtonIcon = viewConfig.getConfig(elementId: .videoButton, key: "image", of: String.self) ?? ""
+//            let videoButtonTitle = viewConfig.getConfig(elementId: .videoButton, key: "text", of: String.self) ?? ""
+//            getItemView(image: AmityIcon.getImageResource(named: videoButtonIcon),
+//                        title: videoButtonTitle,
+//                        isHidden: viewModel.medias.first?.type ?? .video != .video) {
+//                showMediaPicker.type = .videos
+//                showMediaPicker.source = .photoLibrary
+//                showMediaPicker.isShown.toggle()
+//            }
+//            .isHidden(viewConfig.isHidden(elementId: .videoButton))
+//            .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.videoButton)
             
 //            getItemView(image: AmityIcon.attatchmentIcon.getImageResource(),
 //                        title: "Attatchment",

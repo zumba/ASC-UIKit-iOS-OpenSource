@@ -43,9 +43,9 @@ public struct AmityCommunityProfileTabComponent: AmityComponentView {
             let imageFeedTabItem = TabItem(index: 2, image: imageFeedTabIcon)
             TabItemView(currentTab: $currentTab, namespace: namespace.self, tabItem: imageFeedTabItem)
             
-            let videoFeedTabIcon = AmityIcon.communityVideoFeedIcon.getImageResource()
-            let videoFeedTabItem = TabItem(index: 3, image: videoFeedTabIcon)
-            TabItemView(currentTab: $currentTab, namespace: namespace.self, tabItem: videoFeedTabItem)
+//            let videoFeedTabIcon = AmityIcon.communityVideoFeedIcon.getImageResource()
+//            let videoFeedTabItem = TabItem(index: 3, image: videoFeedTabIcon)
+//            TabItemView(currentTab: $currentTab, namespace: namespace.self, tabItem: videoFeedTabItem)
         }
         .padding(.horizontal)
         .padding(.top, 8)
