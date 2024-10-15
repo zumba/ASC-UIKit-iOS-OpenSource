@@ -111,8 +111,8 @@ class TargetSelectionViewModel: ObservableObject {
                                 case .post:
                                     permission = .createPrivilegedPost
 
-                                case .story:
-                                    permission = .manageStoryCommunity
+//                                case .story:
+//                                    permission = .manageStoryCommunity
 
                                 }
                                 

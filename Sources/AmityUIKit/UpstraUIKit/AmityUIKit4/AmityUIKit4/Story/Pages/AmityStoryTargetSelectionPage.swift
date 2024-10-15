@@ -50,12 +50,12 @@ public struct AmityStoryTargetSelectionPage: AmityPageIdentifiable, View {
             )
             .frame(height: 58)
             
-            TargetSelectionView(communityOnTapAction: { communityModel in
-                
-                let context = AmityStoryTargetSelectionPageBehaviour.Context(page: self, community: communityModel.object, targetType: .community)
-                AmityUIKitManagerInternal.shared.behavior.storyTargetSelectionPageBehaviour?.goToCreateStoryPage(context: context)
-                
-            }, contentType: .story)
+//            TargetSelectionView(communityOnTapAction: { communityModel in
+//                
+//                let context = AmityStoryTargetSelectionPageBehaviour.Context(page: self, community: communityModel.object, targetType: .community)
+//                AmityUIKitManagerInternal.shared.behavior.storyTargetSelectionPageBehaviour?.goToCreateStoryPage(context: context)
+//                
+//            }, contentType: .story)
         }
         .background(Color(viewConfig.theme.backgroundColor).ignoresSafeArea())
         .updateTheme(with: viewConfig)
