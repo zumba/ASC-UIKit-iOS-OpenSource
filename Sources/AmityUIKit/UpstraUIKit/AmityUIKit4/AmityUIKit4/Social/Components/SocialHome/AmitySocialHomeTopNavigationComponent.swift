@@ -55,15 +55,11 @@ public struct AmitySocialHomeTopNavigationComponent: AmityComponentView {
             .isHidden(viewConfig.isHidden(elementId: .globalSearchButton), remove: true)
             .accessibilityIdentifier(AccessibilityID.Social.SocialHomePage.globalSearchButton)
             
-            if selectedTab != .explore {
+            if selectedTab == .newsFeed {
                 Button(action: {
                     
-                    if selectedTab == .myCommunities {
-                        goToCommunitySetupPage()
-                    } else {
-                        withoutAnimation {
-                            showPostCreationMenu.toggle()
-                        }
+                    withoutAnimation {
+                        showPostCreationMenu.toggle()
                     }
                     
                 }, label: {
@@ -90,10 +86,10 @@ public struct AmitySocialHomeTopNavigationComponent: AmityComponentView {
     }
     
     
-    private func goToCommunitySetupPage() {
-        let context = AmitySocialHomeTopNavigationComponentBehavior.Context(component: self)
-        AmityUIKitManagerInternal.shared.behavior.socialHomeTopNavigationComponentBehavior?.goToCreateCommunityPage(context: context)
-    }
+//    private func goToCommunitySetupPage() {
+//        let context = AmitySocialHomeTopNavigationComponentBehavior.Context(component: self)
+//        AmityUIKitManagerInternal.shared.behavior.socialHomeTopNavigationComponentBehavior?.goToCreateCommunityPage(context: context)
+//    }
 }
 
 

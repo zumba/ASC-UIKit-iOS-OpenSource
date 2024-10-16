@@ -38,49 +38,49 @@ public struct AmityEmptyNewsFeedComponent: AmityComponentView {
                 .isHidden(viewConfig.isHidden(elementId: .title))
                 .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.title)
             
-            let description = viewConfig.getConfig(elementId: .description, key: "text", of: String.self) ?? ""
-            Text(description)
-                .font(.system(size: 14))
-                .foregroundColor(Color(viewConfig.theme.baseColorShade3))
-                .padding(.top, 4)
-                .isHidden(viewConfig.isHidden(elementId: .description))
-                .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.description)
+//            let description = viewConfig.getConfig(elementId: .description, key: "text", of: String.self) ?? ""
+//            Text(description)
+//                .font(.system(size: 14))
+//                .foregroundColor(Color(viewConfig.theme.baseColorShade3))
+//                .padding(.top, 4)
+//                .isHidden(viewConfig.isHidden(elementId: .description))
+//                .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.description)
             
-            let exploreCommunityButtonIcon = AmityIcon.getImageResource(named: viewConfig.getConfig(elementId: .exploreCommunittiesButton, key: "icon", of: String.self) ?? "")
-            let exploreCommunityButtonText = viewConfig.getConfig(elementId: .exploreCommunittiesButton, key: "text", of: String.self) ?? ""
-            HStack(alignment: .center, spacing: 8) {
-                Image(exploreCommunityButtonIcon)
-                    .resizable()
-                    .frame(size: CGSize(width: 20.0, height: 20.0))
-                    .padding(.leading, 24)
-                    
-                Text(exploreCommunityButtonText)
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(Color(viewConfig.theme.backgroundColor))
-                    .padding([.top, .bottom], 12)
-                    .padding(.trailing, 24)
-            }
-            .background(Color(viewConfig.theme.primaryColor))
-            .clipShape(RoundedRectangle(cornerRadius: 5.0))
-            .padding(.top, 17)
-            .onTapGesture {
-                Log.add(event: .info, "Explore Community")
-            }
-            .isHidden(viewConfig.isHidden(elementId: .exploreCommunittiesButton))
-            .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.exploreCommunittiesButton)
+//            let exploreCommunityButtonIcon = AmityIcon.getImageResource(named: viewConfig.getConfig(elementId: .exploreCommunittiesButton, key: "icon", of: String.self) ?? "")
+//            let exploreCommunityButtonText = viewConfig.getConfig(elementId: .exploreCommunittiesButton, key: "text", of: String.self) ?? ""
+//            HStack(alignment: .center, spacing: 8) {
+//                Image(exploreCommunityButtonIcon)
+//                    .resizable()
+//                    .frame(size: CGSize(width: 20.0, height: 20.0))
+//                    .padding(.leading, 24)
+//                    
+//                Text(exploreCommunityButtonText)
+//                    .font(.system(size: 16, weight: .semibold))
+//                    .foregroundColor(Color(viewConfig.theme.backgroundColor))
+//                    .padding([.top, .bottom], 12)
+//                    .padding(.trailing, 24)
+//            }
+//            .background(Color(viewConfig.theme.primaryColor))
+//            .clipShape(RoundedRectangle(cornerRadius: 5.0))
+//            .padding(.top, 17)
+//            .onTapGesture {
+//                Log.add(event: .info, "Explore Community")
+//            }
+//            .isHidden(viewConfig.isHidden(elementId: .exploreCommunittiesButton))
+//            .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.exploreCommunittiesButton)
             
-            let createCommunityButtonText = viewConfig.getConfig(elementId: .createCommunityButton, key: "text", of: String.self) ?? ""
-            Text(createCommunityButtonText)
-                .font(.system(size: 15))
-                .foregroundColor(Color(viewConfig.theme.primaryColor))
-                .padding(.top, 14)
-                .onTapGesture {
-                    let page = AmityCommunitySetupPage(mode: .create)
-                    let vc = AmitySwiftUIHostingController(rootView: page)
-                    host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
-                }
-                .isHidden(viewConfig.isHidden(elementId: .createCommunityButton))
-                .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.createCommunityButton)
+//            let createCommunityButtonText = viewConfig.getConfig(elementId: .createCommunityButton, key: "text", of: String.self) ?? ""
+//            Text(createCommunityButtonText)
+//                .font(.system(size: 15))
+//                .foregroundColor(Color(viewConfig.theme.primaryColor))
+//                .padding(.top, 14)
+//                .onTapGesture {
+//                    let page = AmityCommunitySetupPage(mode: .create)
+//                    let vc = AmitySwiftUIHostingController(rootView: page)
+//                    host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
+//                }
+//                .isHidden(viewConfig.isHidden(elementId: .createCommunityButton))
+//                .accessibilityIdentifier(AccessibilityID.Social.EmptyNewsFeed.createCommunityButton)
         }
         .background(Color(viewConfig.theme.backgroundColor))
         .frame(maxHeight: .infinity)

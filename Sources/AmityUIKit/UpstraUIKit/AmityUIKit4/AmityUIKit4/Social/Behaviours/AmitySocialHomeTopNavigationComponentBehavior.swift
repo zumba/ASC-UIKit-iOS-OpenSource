@@ -23,10 +23,10 @@ open class AmitySocialHomeTopNavigationComponentBehavior {
         
     }
     
-    open func goToCreateCommunityPage(context: AmitySocialHomeTopNavigationComponentBehavior.Context) {
-        let page = AmityCommunitySetupPage(mode: .create)
-        let vc = AmitySwiftUIHostingController(rootView: page)
-        context.component.host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
-    }
+//    open func goToCreateCommunityPage(context: AmitySocialHomeTopNavigationComponentBehavior.Context) {
+//        let page = AmityCommunitySetupPage(mode: .create)
+//        let vc = AmitySwiftUIHostingController(rootView: page)
+//        context.component.host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
+//    }
     
 }
