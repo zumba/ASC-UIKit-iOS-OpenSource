@@ -167,7 +167,7 @@ enum AmityIcon: String, ImageResourceProvider {
     case privateFeedIcon = "privateFeedIcon"
     case blockedFeedIcon = "blockedFeedIcon"
     case listRadioIcon = "listRadioIcon"
-    case pollRadioIcon = "pollRadioIcon"
+    case profileIcon = "profileIcon"
 
     func getURL() -> URL {
         let path = AmityUIKit4Manager.bundle.path(forResource: self.rawValue, ofType: ".svg")
