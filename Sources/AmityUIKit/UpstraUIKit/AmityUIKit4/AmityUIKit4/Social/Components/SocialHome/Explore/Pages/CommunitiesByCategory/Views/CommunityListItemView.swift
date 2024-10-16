@@ -17,7 +17,7 @@ struct CommunityListItemView: View {
     
     var body: some View {
         HStack {
-            AsyncImage(placeholder: AmityIcon.communityThumbnail.imageResource, url: URL(string: community.avatarURL), contentMode: .fill)
+            AsyncImage(placeholder: AmityIcon.communityThumbnail.imageResource, url: URL(string: community.largeAvatarURL), contentMode: .fill)
                 .accessibilityLabel(AccessibilityID.Social.Explore.communityImage)
                 .frame(width: 80, height: 80)
                 .clipped()
@@ -56,28 +56,28 @@ struct CommunityJoinButton: View {
             tapAction()
         } label: {
             HStack(spacing: 0) {
-                Image(isJoined ? AmityIcon.tickIcon.imageResource : AmityIcon.plusIcon.imageResource)
+                Image((community.isJoined || isJoined) ? AmityIcon.tickIcon.imageResource : AmityIcon.plusIcon.imageResource)
                     .resizable()
                     .renderingMode(.template)
                     .scaledToFit()
                     .frame(width: 16, height: 16)
-                    .foregroundColor(Color(isJoined ? viewConfig.theme.baseColor : .white))
+                    .foregroundColor(Color((community.isJoined || isJoined) ? viewConfig.theme.baseColor : .white))
                 
-                Text(isJoined ? AmityLocalizedStringSet.Social.communityPageJoinedTitle.localizedString : AmityLocalizedStringSet.Social.communityPageJoinTitle.localizedString)
+                Text((community.isJoined || isJoined) ? AmityLocalizedStringSet.Social.communityPageJoinedTitle.localizedString : AmityLocalizedStringSet.Social.communityPageJoinTitle.localizedString)
                     .font(.caption)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(isJoined ? viewConfig.theme.baseColor : .white))
+                    .foregroundColor(Color((community.isJoined || isJoined) ? viewConfig.theme.baseColor : .white))
                     .padding(.horizontal, 4)
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 6)
         }
         .buttonStyle(.plain)
-        .background(Color(isJoined ? viewConfig.theme.backgroundColor : viewConfig.theme.primaryColor))
+        .background(Color((community.isJoined || isJoined) ? viewConfig.theme.backgroundColor : viewConfig.theme.primaryColor))
         .cornerRadius(4, corners: .allCorners)
         .overlay(
             RoundedRectangle(cornerRadius: 4, style: .continuous)
-                .stroke(Color(isJoined ? viewConfig.theme.baseColorShade4 : viewConfig.theme.primaryColor), lineWidth: 1)
+                .stroke(Color((community.isJoined || isJoined) ? viewConfig.theme.baseColorShade4 : viewConfig.theme.primaryColor), lineWidth: 1)
         )
         .onChange(of: community.isJoined, perform: { value in
             withAnimation {

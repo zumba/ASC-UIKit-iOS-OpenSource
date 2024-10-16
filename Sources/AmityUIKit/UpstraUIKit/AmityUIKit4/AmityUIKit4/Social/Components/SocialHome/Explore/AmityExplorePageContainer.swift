@@ -77,38 +77,38 @@ struct AmityExplorePageContainer: View {
                 .padding(.top, isRefreshing ? 36 : 0)
                 .animation(.linear, value: isRefreshing)
                 
-                emptyState
-                    .opacity(stateManager.isNoCommunitiesAvailable || stateManager.isErrorInFetchingCommunities ? 1 : 0)
+//                emptyState
+//                    .opacity(stateManager.isNoCommunitiesAvailable || stateManager.isErrorInFetchingCommunities ? 1 : 0)
             }
         }
         .coordinateSpace(name: "scrollview")
     }
     
-    private func openCommunitySetupPage() {
-        let page = AmityCommunitySetupPage(mode: .create)
-        let vc = AmitySwiftUIHostingController(rootView: page)
-        host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
-    }
+//    private func openCommunitySetupPage() {
+//        let page = AmityCommunitySetupPage(mode: .create)
+//        let vc = AmitySwiftUIHostingController(rootView: page)
+//        host.controller?.navigationController?.pushViewController(vc, animation: .presentation)
+//    }
     
-    @ViewBuilder
-    var emptyState: some View {
-        ZStack {
-            Color.clear
-                .frame(height: UIScreen.main.bounds.height * 0.7)
-            
-            VStack {
-                Spacer()
-                
-                let emptyStateType: ExploreComponentEmptyStateView.StateType = stateManager.isNoCommunitiesAvailable ? .communitiesNotAvailable : .unableToLoad
-                ExploreComponentEmptyStateView(type: emptyStateType, action: {
-                    openCommunitySetupPage()
-                })
-                
-                Spacer()
-                Spacer()
-            }
-        }
-    }
+//    @ViewBuilder
+//    var emptyState: some View {
+//        ZStack {
+//            Color.clear
+//                .frame(height: UIScreen.main.bounds.height * 0.7)
+//            
+//            VStack {
+//                Spacer()
+//                
+//                let emptyStateType: ExploreComponentEmptyStateView.StateType = stateManager.isNoCommunitiesAvailable ? .communitiesNotAvailable : .unableToLoad
+//                ExploreComponentEmptyStateView(type: emptyStateType, action: {
+//                    openCommunitySetupPage()
+//                })
+//                
+//                Spacer()
+//                Spacer()
+//            }
+//        }
+//    }
     
     func refreshData() async {
         ExploreComponentsStateManager.shared.refreshAllComponents()
