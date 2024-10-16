@@ -79,10 +79,29 @@ public struct AmitySocialHomeTopNavigationComponent: AmityComponentView {
                 }
                 .isHidden(viewConfig.isHidden(elementId: .postCreationButton), remove: true)
             }
+            Button {
+                goToUserProfile()
+            } label: {
+                VStack {
+                    let userIcon = AmityIcon.profileIcon.getImageResource()
+                    Image(userIcon)
+                        .frame(size: CGSize(width: 21.0, height: 16.0))
+                }
+                .frame(size: CGSize(width: 32.0, height: 32.0))
+                .background(Color(viewConfig.theme.secondaryColor.blend(.shade4)))
+                .clipShape(Circle())
+            }
+
         }
         .padding([.leading, .trailing], 15.5)
         .background(Color(viewConfig.theme.backgroundColor).ignoresSafeArea())
         .updateTheme(with: viewConfig)
+    }
+    
+    private func goToUserProfile() {
+        let page = AmityUserProfilePage(userId: AmityUIKit4Manager.client.currentUserId!)
+        let vc = AmitySwiftUIHostingController(rootView: page)
+        host.controller?.navigationController?.pushViewController(vc, animated: true)
     }
     
     
