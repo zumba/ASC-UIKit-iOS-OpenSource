@@ -1,4 +1,4 @@
-After update from amity sdk make sure that throughout amity ui kit following are hidden/changed/added:
+After update to latest amity make sure that throughout our custom amity following are hidden/changed/added:
 - Video buttons - hide
 - Create group button - hide
 - Live stream button - hide
