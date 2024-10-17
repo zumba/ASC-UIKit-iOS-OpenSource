@@ -56,7 +56,7 @@ public struct AmityMediaAttachmentComponent: AmityComponentView {
             .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.cameraButton)
 
             Spacer()
-                .isHidden(currentType == .video, remove: true)
+//                .isHidden(currentType == .video, remove: true)
             
             let imageButtonIcon = viewConfig.getConfig(elementId: .imageButton, key: "image", of: String.self) ?? ""
             getItemView(image: AmityIcon.getImageResource(named: imageButtonIcon), isHidden: viewModel.medias.first?.type ?? .image != .image) {
@@ -68,21 +68,21 @@ public struct AmityMediaAttachmentComponent: AmityComponentView {
             .isHidden(viewConfig.isHidden(elementId: .imageButton))
             .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.imageButton)
             
-            Spacer()
-                .isHidden(currentType == .image, remove: true)
+//            Spacer()
+//                .isHidden(currentType == .image, remove: true)
             
-            let videoButtonIcon = viewConfig.getConfig(elementId: .videoButton, key: "image", of: String.self) ?? ""
-            getItemView(image: AmityIcon.getImageResource(named: videoButtonIcon), isHidden: viewModel.medias.first?.type ?? .video != .video) {
-                showMediaPicker.type = .videos
-                showMediaPicker.source = .photoLibrary
-                showMediaPicker.isShown.toggle()
-                hideKeyboard()
-            }
-            .isHidden(viewConfig.isHidden(elementId: .videoButton))
-            .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.videoButton)
+//            let videoButtonIcon = viewConfig.getConfig(elementId: .videoButton, key: "image", of: String.self) ?? ""
+//            getItemView(image: AmityIcon.getImageResource(named: videoButtonIcon), isHidden: viewModel.medias.first?.type ?? .video != .video) {
+//                showMediaPicker.type = .videos
+//                showMediaPicker.source = .photoLibrary
+//                showMediaPicker.isShown.toggle()
+//                hideKeyboard()
+//            }
+//            .isHidden(viewConfig.isHidden(elementId: .videoButton))
+//            .accessibilityIdentifier(AccessibilityID.Social.MediaAttachment.videoButton)
             
-            Spacer()
-                .isHidden(currentType == nil, remove: true)
+//            Spacer()
+//                .isHidden(currentType == nil, remove: true)
             
         }
         .frame(maxWidth: .infinity)
