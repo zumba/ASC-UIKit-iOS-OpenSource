@@ -189,7 +189,7 @@ public struct AmityCommunityHeaderComponent: AmityComponentView {
                 }
                 .accessibilityIdentifier(AccessibilityID.Social.CommunityHeader.communityPendingPost)
             }
-            .padding(.top, -100)
+            .padding(.top, -144)
         }
         .background(Color(viewConfig.theme.backgroundColor))
         .updateTheme(with: viewConfig)

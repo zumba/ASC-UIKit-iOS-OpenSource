@@ -95,27 +95,27 @@ public struct AmityCommunityMembershipPage: AmityPageView {
             
             Spacer()
             
-            Image(AmityIcon.plusIcon.getImageResource())
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(Color(viewConfig.theme.baseColor))
-                .frame(width: 22, height: 20)
-                .onTapGesture {
-                    let onAddedAction: ([AmityUserModel]) -> Void = { users in
-                        Task { @MainActor in
-                            do {
-                                let _ = try await community.membership.addMembers(users.map {$0.userId})
-                                Toast.showToast(style: .success, message: "Successfully added members to this community!")
-                            } catch {
-                                Toast.showToast(style: .warning, message: "Failed to add members to this community")
-                            }
-                        }
-                    }
-                    
-                    let context = AmityCommunityMembershipPageBehavior.Context(page: self, addUserPageCompletion: onAddedAction)
-                    AmityUIKitManagerInternal.shared.behavior.communityMembershipPageBehavior?.goToAddMemberPage(context)
-                }
+//            Image(AmityIcon.plusIcon.getImageResource())
+//                .renderingMode(.template)
+//                .resizable()
+//                .scaledToFit()
+//                .foregroundColor(Color(viewConfig.theme.baseColor))
+//                .frame(width: 22, height: 20)
+//                .onTapGesture {
+//                    let onAddedAction: ([AmityUserModel]) -> Void = { users in
+//                        Task { @MainActor in
+//                            do {
+//                                let _ = try await community.membership.addMembers(users.map {$0.userId})
+//                                Toast.showToast(style: .success, message: "Successfully added members to this community!")
+//                            } catch {
+//                                Toast.showToast(style: .warning, message: "Failed to add members to this community")
+//                            }
+//                        }
+//                    }
+//                    
+//                    let context = AmityCommunityMembershipPageBehavior.Context(page: self, addUserPageCompletion: onAddedAction)
+//                    AmityUIKitManagerInternal.shared.behavior.communityMembershipPageBehavior?.goToAddMemberPage(context)
+//                }
         }
     }
     
