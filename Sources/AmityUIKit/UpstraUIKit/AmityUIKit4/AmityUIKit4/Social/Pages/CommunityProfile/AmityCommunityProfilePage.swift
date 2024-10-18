@@ -100,7 +100,6 @@ public struct AmityCommunityProfilePage: AmityPageView {
                             AmityUIKitManagerInternal.shared.behavior.communityProfilePageBehavior?.goToPostDetailPage(context: context, post: post, category: componentContext?.category ?? .general)
                         })
                             .isHidden(currentTab != 0)
-                            .padding(.top, -44)
                         
                         AmityCommunityPinnedPostComponent(communityId: communityId, pageId: .communityProfilePage, communityProfileViewModel: viewModel, onTapAction: { post, postContext in
                             
@@ -108,15 +107,12 @@ public struct AmityCommunityProfilePage: AmityPageView {
                             AmityUIKitManagerInternal.shared.behavior.communityProfilePageBehavior?.goToPostDetailPage(context: context, post: post, category: postContext?.category ?? .pinAndAnnouncement)
                         })
                             .isHidden(currentTab != 1)
-                            .padding(.top, -44)
                         
                         AmityCommunityImageFeedComponent(communityId: communityId, communityProfileViewModel: viewModel, pageId: .communityProfilePage)
                             .isHidden(currentTab != 2)
-                            .padding(.top, -44)
                         
                         AmityCommunityVideoFeedComponent(communityId: communityId, communityProfileViewModel: viewModel, pageId: .communityProfilePage)
                             .isHidden(currentTab != 3)
-                            .padding(.top, -44)
                         
                     }
                     .offset(y: 0)

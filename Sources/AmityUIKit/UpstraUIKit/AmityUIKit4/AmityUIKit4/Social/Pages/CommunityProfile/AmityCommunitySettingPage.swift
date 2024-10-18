@@ -30,8 +30,9 @@ public struct AmityCommunitySettingPage: AmityPageView {
                 .padding([.top, .bottom], 16)
             
             Text(AmityLocalizedStringSet.Social.communitySettingBasicInfoTitle.localizedString)
-                .applyTextStyle(.titleBold(Color(viewConfig.theme.baseColor)))
+                .font(.system(size: 17, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(Color(viewConfig.theme.baseColor))
             
             /// Edit Profile setting
             if viewModel.shouldShowEditProfile {
@@ -77,8 +78,9 @@ public struct AmityCommunitySettingPage: AmityPageView {
             /// Community Permissions header
             if viewModel.shouldShowPostPermissions || viewModel.shouldShowStoryComments {
                 Text(AmityLocalizedStringSet.Social.communitySettingCommunityPermissionsTitle.localizedString)
-                    .applyTextStyle(.titleBold(Color(viewConfig.theme.baseColor)))
+                    .font(.system(size: 17, weight: .semibold))
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(Color(viewConfig.theme.baseColor))
             }
             
             /// Post Permissions setting
@@ -105,54 +107,59 @@ public struct AmityCommunitySettingPage: AmityPageView {
                     .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.storySetting)
             }
             
-            let leaveCommunityText = viewConfig.getText(elementId: .leaveCommunity) ?? AmityLocalizedStringSet.Social.communitySettingLeaveCommunity.localizedString
-            Text(leaveCommunityText)
-                .applyTextStyle(.bodyBold(Color(viewConfig.theme.alertColor)))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    if community.membersCount == 1 {
-                        let alertController = UIAlertController(title: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertTitle.localizedString, message: "As you’re the last moderator and member, leaving will also close this community. All posts shared in community will be deleted. This cannot be undone.", preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title: AmityLocalizedStringSet.General.cancel.localizedString, style: .cancel)
-                        
-                        let confirmAction = UIAlertAction(title: AmityLocalizedStringSet.General.leave.localizedString, style: .destructive) { _ in
-                            closeCommunity()
+            if community.isJoined {
+                let leaveCommunityText = viewConfig.getText(elementId: .leaveCommunity) ?? AmityLocalizedStringSet.Social.communitySettingLeaveCommunity.localizedString
+                Text(leaveCommunityText)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(Color(viewConfig.theme.alertColor))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if community.membersCount == 1 {
+                            let alertController = UIAlertController(title: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertTitle.localizedString, message: "As you’re the last moderator and member, leaving will also close this community. All posts shared in community will be deleted. This cannot be undone.", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: AmityLocalizedStringSet.General.cancel.localizedString, style: .cancel)
+                            
+                            let confirmAction = UIAlertAction(title: AmityLocalizedStringSet.General.leave.localizedString, style: .destructive) { _ in
+                                closeCommunity()
+                            }
+                            alertController.addAction(cancelAction)
+                            alertController.addAction(confirmAction)
+                            
+                            host.controller?.present(alertController, animated: true)
+                            
+                        } else {
+                            let alertController = UIAlertController(title: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertTitle.localizedString, message: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertMessage.localizedString, preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: AmityLocalizedStringSet.General.cancel.localizedString, style: .cancel)
+                            let confirmAction = UIAlertAction(title: AmityLocalizedStringSet.General.leave.localizedString, style: .destructive) { _ in
+                                leaveCommunity()
+                            }
+                            alertController.addAction(cancelAction)
+                            alertController.addAction(confirmAction)
+                            
+                            host.controller?.present(alertController, animated: true)
                         }
-                        alertController.addAction(cancelAction)
-                        alertController.addAction(confirmAction)
-                        
-                        host.controller?.present(alertController, animated: true)
-                        
-                    } else {
-                        let alertController = UIAlertController(title: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertTitle.localizedString, message: AmityLocalizedStringSet.Social.communitySettingLeaveCommunityAlertMessage.localizedString, preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title: AmityLocalizedStringSet.General.cancel.localizedString, style: .cancel)
-                        let confirmAction = UIAlertAction(title: AmityLocalizedStringSet.General.leave.localizedString, style: .destructive) { _ in
-                            leaveCommunity()
-                        }
-                        alertController.addAction(cancelAction)
-                        alertController.addAction(confirmAction)
-                        
-                        host.controller?.present(alertController, animated: true)
                     }
-                }
-                .isHidden(viewConfig.isHidden(elementId: .leaveCommunity))
-                .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.leaveCommunity)
-            
-            Rectangle()
-                .fill(Color(viewConfig.theme.baseColorShade4))
-                .frame(height: 1)
+                    .isHidden(viewConfig.isHidden(elementId: .leaveCommunity))
+                    .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.leaveCommunity)
+                
+                Rectangle()
+                    .fill(Color(viewConfig.theme.baseColorShade4))
+                    .frame(height: 1)
+            }
             
             /// Close Community setting
             if viewModel.shouldShowCloseCommunity {
                 VStack(spacing: 8) {
                     let closeCommunityText = viewConfig.getText(elementId: .closeCommunity) ?? AmityLocalizedStringSet.Social.communitySettingCloseCommunity.localizedString
                     Text(closeCommunityText)
-                        .applyTextStyle(.bodyBold(Color(viewConfig.theme.alertColor)))
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(Color(viewConfig.theme.alertColor))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     let closeCommunityDesc = viewConfig.getText(elementId: .closeCommunityDescription) ?? AmityLocalizedStringSet.Social.communitySettingCloseCommunityDescription.localizedString
                     Text(closeCommunityDesc)
-                        .applyTextStyle(.caption(Color(viewConfig.theme.baseColorShade1)))
+                        .font(.system(size: 13))
+                        .foregroundColor(Color(viewConfig.theme.baseColorShade1))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                 }
@@ -201,8 +208,9 @@ public struct AmityCommunitySettingPage: AmityPageView {
             Spacer()
             
             Text(community.displayName)
-                .applyTextStyle(.titleBold(Color(viewConfig.theme.baseColor)))
                 .lineLimit(1)
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundColor(Color(viewConfig.theme.baseColor))
             
             Spacer()
             
@@ -229,13 +237,15 @@ public struct AmityCommunitySettingPage: AmityPageView {
                 .cornerRadius(4)
             
             Text(text)
-                .applyTextStyle(.body(Color(viewConfig.theme.baseColor)))
+                .font(.system(size: 15))
+                .foregroundColor(Color(viewConfig.theme.baseColor))
             
             Spacer()
             
             if let disclosureText {
                 Text(disclosureText)
-                    .applyTextStyle(.body(Color(viewConfig.theme.baseColorShade1)))
+                    .font(.system(size: 15))
+                    .foregroundColor(Color(viewConfig.theme.baseColorShade1))
             }
             
             Image(AmityIcon.arrowIcon.getImageResource())
