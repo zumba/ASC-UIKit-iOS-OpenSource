@@ -32,6 +32,9 @@ struct InfoTextFieldModel {
     
     // If TextField need to limit maximum character count
     var maxCharCount: Int?
+    
+    // If should show char count
+    var showCharCount: Bool = false
 }
 
 extension InfoTextField: AmityViewBuildable {
@@ -121,11 +124,13 @@ struct InfoTextField: View {
                 }
                 
                 Spacer()
-                if let limitedCharCount = data.maxCharCount {
-                    Text("\(charCount)/\(limitedCharCount)")
-                        .font(.system(size: 13))
-                        .foregroundColor(Color(infoTextColor))
-                        .accessibilityIdentifier(charCountTextAccessibilityId ?? "charCountTextAccessibilityId")
+                if data.showCharCount {
+                    if let limitedCharCount = data.maxCharCount {
+                        Text("\(charCount)/\(limitedCharCount)")
+                            .font(.system(size: 13))
+                            .foregroundColor(Color(infoTextColor))
+                            .accessibilityIdentifier(charCountTextAccessibilityId ?? "charCountTextAccessibilityId")
+                    }
                 }
             }
             .padding(.bottom, 20)

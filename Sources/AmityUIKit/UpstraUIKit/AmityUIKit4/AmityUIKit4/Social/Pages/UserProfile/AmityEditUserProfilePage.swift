@@ -22,7 +22,8 @@ public struct AmityEditUserProfilePage: AmityPageView {
         placeholder: "Display name",
         isMandatory: false,
         isExpandable: true,
-        maxCharCount: 100
+        maxCharCount: 100,
+        showCharCount: false
     )
     @State private var displayNameText: String = ""
 
@@ -32,7 +33,8 @@ public struct AmityEditUserProfilePage: AmityPageView {
         isMandatory: false,
         showOptionalTitle: true,
         isExpandable: true,
-        maxCharCount: 180
+        maxCharCount: 180,
+        showCharCount: true
     )
     @State private var aboutText: String = ""
     @State private var isTextVaild: Bool = true
@@ -84,7 +86,8 @@ public struct AmityEditUserProfilePage: AmityPageView {
                 placeholder: "Display Name",
                 isMandatory: false,
                 isExpandable: true,
-                maxCharCount: 100
+                maxCharCount: 100,
+                showCharCount: false
             )
             displayNameText = user?.displayName ?? ""
             
@@ -95,7 +98,8 @@ public struct AmityEditUserProfilePage: AmityPageView {
                 isMandatory: false,
                 showOptionalTitle: true,
                 isExpandable: true,
-                maxCharCount: 180
+                maxCharCount: 180,
+                showCharCount: true
             )
             aboutText = user?.about ?? ""
         }
@@ -155,21 +159,21 @@ public struct AmityEditUserProfilePage: AmityPageView {
                     .clipped()
             }
         
-            Color.black
-                .opacity(0.4)
-            
-            Image(AmityIcon.cameraIcon.getImageResource())
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.white)
-                .frame(width: 20, height: 16)
+//            Color.black
+//                .opacity(0.4)
+//            
+//            Image(AmityIcon.cameraIcon.getImageResource())
+//                .renderingMode(.template)
+//                .resizable()
+//                .scaledToFit()
+//                .foregroundColor(.white)
+//                .frame(width: 20, height: 16)
         }
         .frame(width: 64, height: 64)
         .clipShape(Circle())
-        .onTapGesture {
-            showImagePicker.isShown.toggle()
-        }
+//        .onTapGesture {
+//            showImagePicker.isShown.toggle()
+//        }
     }
     
     @ViewBuilder
