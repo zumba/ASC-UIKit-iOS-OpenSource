@@ -302,7 +302,13 @@ extension AmityCommunityProfilePage {
                     
                 )
                 .onTapGesture {
-                    host.controller?.navigationController?.popViewController(animated: true)
+                    if let navigationController = host.controller?.navigationController {
+                        if navigationController.viewControllers.first == host.controller {
+                            host.controller?.navigationController?.dismiss(animated: true)
+                        } else {
+                            host.controller?.navigationController?.popViewController(animated: true)
+                        }
+                    }
                 }
             
             if let community = viewModel.community {
