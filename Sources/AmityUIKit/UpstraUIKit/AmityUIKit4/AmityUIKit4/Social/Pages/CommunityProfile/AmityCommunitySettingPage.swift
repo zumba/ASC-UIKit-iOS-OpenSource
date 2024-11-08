@@ -56,20 +56,20 @@ public struct AmityCommunitySettingPage: AmityPageView {
                 .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.members)
             
             /// Notifications setting
-            if viewModel.shouldShowNotifications {
-                let notificationText = viewConfig.getText(elementId: .notifications) ?? AmityLocalizedStringSet.Social.communitySettingNotifications.localizedString
-                getItemView(AmityIcon.notificationIcon.getImageResource(), notificationText, disclosureText: viewModel.isNotificationEnabled ? AmityLocalizedStringSet.General.on.localizedString : AmityLocalizedStringSet.General.off.localizedString)
-                    .onTapGesture {
-                        let context = AmityCommunitySettingPageBehavior.Context(page: self, community: community)
-                        AmityUIKitManagerInternal.shared.behavior.communitySettingPageBehavior?.goToNotificationPage(context)
-                    }
-                    .onAppear {
-                        /// Check notification setting to update the on/off status on view appeared...
-                        viewModel.isSocialNetworkEnabled(nil)
-                    }
-                    .isHidden(viewConfig.isHidden(elementId: .notifications))
-                    .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.notifications)
-            }
+//            if viewModel.shouldShowNotifications {
+//                let notificationText = viewConfig.getText(elementId: .notifications) ?? AmityLocalizedStringSet.Social.communitySettingNotifications.localizedString
+//                getItemView(AmityIcon.notificationIcon.getImageResource(), notificationText, disclosureText: viewModel.isNotificationEnabled ? AmityLocalizedStringSet.General.on.localizedString : AmityLocalizedStringSet.General.off.localizedString)
+//                    .onTapGesture {
+//                        let context = AmityCommunitySettingPageBehavior.Context(page: self, community: community)
+//                        AmityUIKitManagerInternal.shared.behavior.communitySettingPageBehavior?.goToNotificationPage(context)
+//                    }
+//                    .onAppear {
+//                        /// Check notification setting to update the on/off status on view appeared...
+//                        viewModel.isSocialNetworkEnabled(nil)
+//                    }
+//                    .isHidden(viewConfig.isHidden(elementId: .notifications))
+//                    .accessibilityIdentifier(AccessibilityID.Social.CommunitySettings.notifications)
+//            }
             
             Rectangle()
                 .fill(Color(viewConfig.theme.baseColorShade4))
