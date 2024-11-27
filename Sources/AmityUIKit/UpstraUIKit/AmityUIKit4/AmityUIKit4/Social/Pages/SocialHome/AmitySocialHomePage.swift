@@ -44,7 +44,7 @@ public struct AmitySocialHomePage: AmityPageView {
         .ignoresSafeArea(edges: .bottom)
         .updateTheme(with: viewConfig)
         .onAppear {
-            host.controller?.navigationController?.isNavigationBarHidden = false
+            host.controller?.navigationController?.isNavigationBarHidden = true
         }
     }
 }
