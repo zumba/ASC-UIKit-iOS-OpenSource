@@ -7,3 +7,6 @@ After updating to latest amity make sure that throughout our custom amity follow
 - Video option in camera - hide
 - Accent colors colors - change 
 - Profile button on amity home top left - add
+- Profile - user cannot edit display name
+- Top right + button - only post and poll should be visible
+- Community settings - leave button should be visible for joined community
